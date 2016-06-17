@@ -625,6 +625,7 @@ img {
     border-radius: .15rem;
     box-sizing: border-box;
     padding-top: .6rem;
+    z-index: 100;
 }
 
 #page3 .box div:nth-child(1) {
@@ -681,8 +682,7 @@ img {
     border-radius: 50%;
     background-color: rgb(244, 247, 54);
     border: .05rem solid lightgoldenrodyellow;
-    -webkit-transform: perspective(400px) translateZ(200px) ;
-    transform: perspective(400px) translateZ(200px);
+    z-index: 200;
 }
 
 #page3 .box div:nth-child(5) span:nth-child(1) {
