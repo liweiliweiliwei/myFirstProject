@@ -52,12 +52,15 @@ img {
     content: "";
     clear: both;
 }
-.swiper-pagination-progress{
+
+.swiper-pagination-progress {
     background-color: lightcoral;
 }
-.swiper-pagination-progress .swiper-pagination-progressbar{
+
+.swiper-pagination-progress .swiper-pagination-progressbar {
     background-color: lightgreen;
 }
+
 /*-----------------------*/
 
 /*--AUDIO--*/
@@ -802,31 +805,31 @@ img {
 
 .verticalBar1 li:nth-child(1), .verticalBar1 li:nth-child(6) {
     left: 0;
-    height: 47%;
+    height: 46.5%;
     background-color: rgb(232, 84, 84);
 }
 
 .verticalBar1 li:nth-child(2), .verticalBar1 li:nth-child(7) {
     left: .64rem;
-    height: 47%;
+    height: 46.5%;
     background-color: rgb(242, 182, 70);
 }
 
 .verticalBar1 li:nth-child(3), .verticalBar1 li:nth-child(8) {
     left: 1.28rem;
-    height: 47%;
+    height: 46.5%;
     background-color: rgb(244, 247, 54);
 }
 
 .verticalBar1 li:nth-child(4), .verticalBar1 li:nth-child(9) {
     left: 1.92rem;
-    height: 47%;
+    height: 46.5%;
     background-color: rgb(159, 227, 91);
 }
 
 .verticalBar1 li:nth-child(5), .verticalBar1 li:nth-child(10) {
     left: 2.56rem;
-    height: 47%;
+    height: 46.5%;
     background-color: rgb(84, 223, 232);
 }
 
@@ -966,6 +969,7 @@ img {
     top: .6rem;
     left: .17rem;
 }
+
 .iconPro2 {
     position: absolute;
     top: 2.5rem;
@@ -982,6 +986,7 @@ img {
     top: .3rem;
     left: .2rem;
 }
+
 .iconPro3 {
     position: absolute;
     top: 3.4rem;
@@ -998,11 +1003,13 @@ img {
     top: .5rem;
     left: .17rem;
 }
-.iconPro4>img{
-    transform:rotate(90deg);
+
+.iconPro4 > img {
+    transform: rotate(90deg);
     width: 100%;
     height: 100%;
 }
+
 .iconPro4 {
     position: absolute;
     top: .35rem;
@@ -1020,16 +1027,16 @@ img {
     left: .24rem;
 }
 
-
-#page5 .iconPro1 img,#page5 .iconPro2 img,#page5 .iconPro3 img{
+#page5 .iconPro1 img, #page5 .iconPro2 img, #page5 .iconPro3 img {
     -webkit-animation: page5Round 2s 5s linear infinite both;
     animation: page5Round 2s 5s linear infinite both;
 }
 
-#page5 .iconPro1,#page5 .iconPro2,#page5 .iconPro3{
+#page5 .iconPro1, #page5 .iconPro2, #page5 .iconPro3 {
     -webkit-animation: page5Round1 2s 4s linear 1 both;
     animation: page5Round1 2s 4s linear 1 both;
 }
+
 @keyframes page5Round {
     from {
         -webkit-transform: rotate(0deg);
@@ -1042,6 +1049,7 @@ img {
     }
 
 }
+
 @keyframes page5Round1 {
     from {
         opacity: 0;
@@ -1050,7 +1058,8 @@ img {
         opacity: 1;
     }
 }
-#page5 .iconPro4{
+
+#page5 .iconPro4 {
     -webkit-animation: page5Round2 1s 4s linear 1 both;
     animation: page5Round2 1s 4s linear 1 both;
 }
@@ -1058,7 +1067,7 @@ img {
 @keyframes page5Round2 {
     from {
         opacity: 0;
-        -webkit-transform: scale(0.1) rotate(0deg) ;
+        -webkit-transform: scale(0.1) rotate(0deg);
         transform: scale(0.1) rotate(0deg);
     }
     to {
@@ -1068,15 +1077,6 @@ img {
 
     }
 }
-
-
-
-
-
-
-
-
-
 
 /*--------page 5 end--------*/
 
