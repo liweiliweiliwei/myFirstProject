@@ -681,8 +681,8 @@ img {
     border-radius: 50%;
     background-color: rgb(244, 247, 54);
     border: .05rem solid lightgoldenrodyellow;
-    -webkit-transform: translate3d(0, 0, 200px) ;
-    transform:translate3d(0, 0, 200px);
+    -webkit-transform: translateZ(200px) ;
+    transform:translateZ(200px);
 }
 
 #page3 .box div:nth-child(5) span:nth-child(1) {
