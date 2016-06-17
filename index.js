@@ -30,21 +30,38 @@
     var swp = new Swiper(".swiper-container", {
         loop: true,
         direction: 'vertical',
+        pagination : '.swiper-pagination',
+        paginationType : 'progress',
         // effect : 'cube',
-        onSlidePrevEnd: function () {
-            step--;
+        // onSlidePrevEnd: function () {
+        //     step--;
+        //     change();
+        //     if (step === 0) {
+        //         step = 5;
+        //     }
+        // },
+        // onSlideNextEnd: function () {
+        //     step++;
+        //     change();
+        //     if (step === 6) {
+        //         step = 1;
+        //     }
+        // }
+        onTransitionEnd:function (swiper) {
+            step= swiper.activeIndex;
             change();
-            if (step === 0) {
-                step = 4;
-            }
-        },
-        onSlideNextEnd: function () {
-            step++;
-            change();
-            if (step === 5) {
-                step = 1;
-            }
+                if (step === 0) {
+                    step = 5;
+                }
+                if (step === 6) {
+                    step = 1;
+                }
         }
+
+
+
+
+
     });
 
 
@@ -52,50 +69,68 @@
         divList = document.querySelectorAll(".swiper-slide");
         [].forEach.call(divList, function (curDiv, index) {
             curDiv.id = index === step ? curDiv.getAttribute("trueId") : null;
-            if (step===1||step===5){
+            if (step === 1 || step === 6) {
                 $(".myResume").addClass(" animated flipInY");
                 $(".hi").addClass(" animated bounceInRight");
-            }else {
+            } else {
                 $(".myResume").removeClass("animated flipInY");
                 $(".hi").removeClass("animated bounceInRight");
             }
-            if (step===2){
+            if (step === 2) {
                 $(".inFoList>li").addClass("animated rollIn");
                 $(".mouse").addClass(" animated fadeInLeft");
-            }else {
+            } else {
                 $(".inFoList>li").removeClass("animated rollIn");
                 $(".mouse").removeClass("animated fadeInLeft");
             }
-            if (step===3){
+            if (step === 3) {
                 $(".box>div:not(:nth-child(5))").addClass("animated flip");
-            }else {
+            } else {
                 $(".box>div:not(:nth-child(5))").removeClass("animated flip");
             }
-            if (step===4||step===0){
+            if (step === 4) {
                 $(".page4>div:nth-child(1)").addClass("animated flipInY");
                 $(".page4>div:nth-child(3)").addClass("animated flipInY");
                 $(".page4>div:nth-child(2)").addClass("animated flipInX");
                 $(".page4>div:nth-child(4)").addClass("animated flipInX");
-            }else {
+            } else {
                 $(".page4>div:nth-child(1)").removeClass("animated flipInY");
                 $(".page4>div:nth-child(3)").removeClass("animated flipInY");
                 $(".page4>div:nth-child(2)").removeClass("animated flipInX");
                 $(".page4>div:nth-child(4)").removeClass("animated flipInX");
             }
-            if (step===5||step===0){
-               
-            }else {
-              
-
+            if (step === 5 || step === 0) {
+                setTimeout(
+                    function () {
+                        $("#page5>ul>li:nth-child(1)").addClass(" bar1");
+                        $("#page5>ul>li:nth-child(6)").addClass(" bar1");
+                        $("#page5>ul>li:nth-child(2)").addClass(" bar2");
+                        $("#page5>ul>li:nth-child(7)").addClass(" bar2");
+                        $("#page5>ul>li:nth-child(3)").addClass(" bar3");
+                        $("#page5>ul>li:nth-child(8)").addClass(" bar3");
+                        $("#page5>ul>li:nth-child(4)").addClass(" bar4");
+                        $("#page5>ul>li:nth-child(9)").addClass(" bar4");
+                        $("#page5>ul>li:nth-child(5)").addClass(" bar5");
+                        $("#page5>ul>li:nth-child(10)").addClass(" bar5");
+                    }, 2000
+                )
+            } else {
+                $(".verticalBar1>li:nth-child(1)").removeClass("bar1");
+                $(".verticalBar1>li:nth-child(6)").removeClass("bar1");
+                $(".verticalBar1>li:nth-child(2)").removeClass("bar2");
+                $(".verticalBar1>li:nth-child(7)").removeClass("bar2");
+                $(".verticalBar1>li:nth-child(3)").removeClass("bar3");
+                $(".verticalBar1>li:nth-child(8)").removeClass("bar3");
+                $(".verticalBar1>li:nth-child(4)").removeClass("bar4");
+                $(".verticalBar1>li:nth-child(9)").removeClass("bar4");
+                $(".verticalBar1>li:nth-child(5)").removeClass("bar5");
+                $(".verticalBar1>li:nth-child(10)").removeClass("bar5");
             }
-
-
-
-
 
 
         });
     }
+
     // //->给区域增加一个loop:true的时候,会自己往开头和结尾各增加一张一模一样的,但是我还需要把区域定位到“真实的第一张”,所以开始会自己向下切换一次,我们让初始的step=0即可
 }();
 
