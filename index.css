@@ -1065,7 +1065,29 @@ img {
 
 }
 
+@-webkit-keyframes page5Round {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+
+}
+
 @keyframes page5Round1 {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes page5Round1 {
     from {
         opacity: 0;
     }
@@ -1093,6 +1115,19 @@ img {
     }
 }
 
+@-webkit-keyframes page5Round2 {
+    from {
+        opacity: 0;
+        -webkit-transform: scale(0.1) rotate(0deg);
+        transform: scale(0.1) rotate(0deg);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: scale(1) rotate(360deg);
+        transform: scale(1) rotate(360deg);
+
+    }
+}
 /*--------page 5 end--------*/
 
 
