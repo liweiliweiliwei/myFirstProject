@@ -514,7 +514,7 @@ img {
 /*--------page 1 end---------*/
 
 /*--------page 2 start---------*/
-#page2 {
+.page2 {
     position: absolute;
     left: -100%;
 }
