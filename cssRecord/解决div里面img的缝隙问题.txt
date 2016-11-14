@@ -1,0 +1,24 @@
+图片IMG与容器下边界之间有空隙怎么办？这里介绍3中简单的解决方法。
+　　第一，给图片img标签display:block。
+　　img{display:block}
+　　第二，定义容器里的字体大小为0。
+　　div {
+　　width:110px;
+　　border:1px solid #000000;
+　　font-size:0
+　　}
+　　第三，定义图片img标签vertical-align:bottom，vertical-align:middle，vertical-align:top
+　　img{vertical-align:bottom}
+　　其他还有把图片下边距设为负值和改写HTML标签的排列。我觉得前三种就完全可以解决了。
+　　造成图片在IE下与容器下边界有空隙的原因
+　　在网上搜了一下，发现old9说的
+　　图片文字等inline元素默认是和父级元素的baseline对齐的，而baseline又和父级底边有一定距离（这个距离和 font-size，font-family 相关，不一定是 5px），所以设置 vertical-align:top/bottom/text-top/text-bottom 都可以避免这种情况出现。而且不光li，其他的block元素中包含img也会有这个现象。
+　　至于这里的HTML属性align=”center”（对于图片浏览器会处理成align=”middle”），就相当于vertical-align:middle; 所以道理也是一样的，只要vertical-align不取baseline，这个空隙就消失了。
+　　相关评论
+　　1.ie的显示有几种模式，在html文档的开始部分声明<!DOCTYPE &hell;ip;.>
+　　假如声明为strict模式，ie以w3c的方式显示文档，而w3c的标准里面<img />默认是一个inline的标签，除非自己显式的声明为 block
+　　2.那个空隙是ie针对盒模型默认的line-height和font-size. 给img desplay:block;虽然能解决问题,但没从结构上来考虑.可谓治标不治本
+
+
+
+

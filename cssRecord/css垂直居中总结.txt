@@ -1,0 +1,133 @@
+CSS制作水平垂直居中对齐各种方法总结 (2011-09-09 14:02:37)转载▼
+标签： 杂谈 	分类： 网页前端
+作为前端攻城师，在制作Web页面时都有碰到CSS制作水平垂直居中，我想大家都有研究过或者写过，特别的其中的垂直居中，更是让人烦恼。这段时间，我收集了几种不同的方式制作垂直居中方法，但每种方法各有千秋呀，要正确的选择也是一件不容易的事情。我会将这几种方法一一介绍给大家，以供大家参考。或许对于我这样的初学者有一定的帮助。
+用CSS来实现元素的垂直居中效果是件苦差事，虽然说实现方法有多种，但有很多方式在某些浏览器下可能无法正常的工作。接下来我们就一起来看看这些不同方法实现垂直居中的各自优点和其不足之处。
+方法一：
+这种方法用来实现单行垂直居中是相当的简单的，你只要保证元素内容是单行，并且其高度是固定不变的，你只要将其“line-height”设置成和“height”值一样就Ok了。不过这种方法局限性太大，只有单行文本的元素才适用，所以在多行元素中是不能使用这种方法的。
+Html Markup
+<div class="vertical">content</div>
+CSS Code:
+.vertical { height: 100px; line-height: 100px; }
+优点：
+适合在所有浏览器，没有足够空间时，内容不会被切掉
+缺点：
+仅适合应用在文本和图片上，并且这种方法，当你文本不是单行时，效果极差，差到让你感到恶心。
+这种方法对运用在小元素上是非常有用的，比如说让一个button、图片或者单行文本字段。
+方法二：
+这种方法将在需要给容器设置绝对定位（position:absolute）,并且定位高度（top:50%）和margin-top为高度的一半（margin-top:-height/2）。这就意味着使用这种方法来实现垂直居中的效果，那么元素必须要有一个固定的高度。这样一来，你给元素设置了固定高度，如果你又给他设置了“overflow:auto”，那么当元素内容超过容器后，这样元素的就会出现滚动，而不会自适应内容的高度。
+HTML Markup
+<div class="vertical">content</div>
+CSS Code
+.vertical { height: 100px; position: absolute; top: 50%; margin-top: -50px; }
+优点：
+能在各浏览器下工作，结构简单明了，不需增加额外的标签
+缺点：
+由于固定死元素的高度，致使没有足哆的空间，当内容超过容器的大小时，要么会消息，要么会出现滚动条（如果元素在body内，当用户缩小浏览器窗口时，body的滚动条将不会出现）。
+这种方法主要是针对多行元素来进行元素的垂直居中，而并非是此元素的内容垂直居中，这一点先要理解并分开清楚。另外此方法是通过绝对定位来实现的，那么用这种方法实现元素的垂直居中需要注意以下几点：其一元素定位关系到一个相对定位参考，所以要保证元素是相对于哪个为参考坐标；另外需要设置给元素明确定一个高度值并且给元素设置一个负值的margin-top，而且值为元素高度的一半。这里我建议大家给元素定一个宽度值，因为元素进行绝对定位后脱离文档流，其宽度是根据元素内容所占宽度来计算的，为这能让其视觉效果更好，最好给元素定义一个宽度值。
+根据这种方法，我们稍作修改就能使元素不单是垂直居中，而且还可以水平居中，如：
+HTML Markup
+<div id="wrap">test</div>
+CSS Code
+#wrap { width: 200px; height:200px; position: absolute; left: 50%; margin-left: -100px; top:50%; margin-top: -100px; }
+这种方法可以实现元素的水平垂直居中，常用于页面在最中间的布局，使用这种方法一定要把握住：水平垂直居中的元素要有明确的大小（换句话说就是要有确切的宽和高度值）；给元素进行绝对定位，并设置left,top值为“50%”（此处最好使用 对定位，如果只是单单水平居中，此处可以换成相对定位）；最后设置margin-top和margin-left的负值，而且其值分别为元素高度和宽度的一半。
+方法三：
+方法三是使用的的div模拟表格效果，也就是说将多个<div>的“display”属性设置为禾“table”和“table-cell”，并设置他们的“vertical-align”的属性值为“middle”。有关于“display:table”更多的介绍可以点击这里或者去阅读Quirksmode的《The display declaration》一文。
+HTML Code
+<div id="container"> <div id="content">content</div> </div>
+CSS Code
+#container { height: 300px; display: table; } #content { display:table-cell; vertical-align: middle; }
+优点：
+这种方法不会像前面的两种方法一样，有高度的限制，此方法可以要据元素内容动态的改变高度，从而也就没有空间的限制，元素的内容不会因为没足够的空间而被切断或者出现难看的滚动条。
+缺点：
+不足之处呢？这种方法只适合现代浏览器，在IE6-7下无法正常运行；而且较前两者而言，结构也更复杂。
+这种方法在现代浏览器下是非常方便。但是在IE6-7中是不被支持的，因为display:table在IE6-7中不被支持，那么为了解决这种方法在IE6-7的兼容，需要额外增加一个div，并使用hack，下面我们一起来看看其解决办法。
+HTML Markup
+<div class="table"> <div class="tableCell"> <div class="content">content</div> </div> </div>
+CSS Code
+.table { height: 300px; width: 300px; display: table; position: relative; float:left; } .tableCell { display: table-cell; vertical-align: middle; text-align: center; padding: 10px; *position: absolute; *top: 50%; *left: 50%; } .content { *position:relative; *top: -50%; *left: -50%; }
+方法四：
+这种方法有点新意，用这种方法你需要在居中元素前面放一个空的<div>（块元素就可以），然后设置这个<div>的高度为50%，margin-bottom为元素高度的一半，而且居中元素需要清除浮动。需要注意的是，使用这种方法，如果你的居中元素是放在body中的话，你需要给html,body设置一个“height:100%”的属性。
+HTML Markup
+<body> <div id="floater"><!--This block have empty content --></div> <div id="content">Content section</div> </body>
+CSS Code
+html,body {height: 100%;} #floater{ float:left; height:50%; margin-bottom: -120px; } #content { clear:both; height: 240px; position: relative; }
+优点：
+这种方法能兼容所有浏览器，在没有足哆空间下，内容不会被切掉
+缺点：
+元素高度被固定死，无法达到内容自适应高度，如果居中元素加上overflow属性，要么元素出现滚动条，要么元素被切掉；另外就是一个不算缺点的缺点，那就是加了一个空标签。
+方法五：
+这种方法和方法三一样使用display:table-cell来实现，不过方法五不同之处是这个方法我们需要一个线盒型，用来实现IE下的效果，需要增加一上行内标签比如说“span”（此处最好使用行内标签，千万不要使用块标签，因为使用块标签会没有效果），并把这个线盒型高度设置为100%，其实现原理大家可以去阅读张鑫旭-鑫空间-鑫生活的《大小不固定的图片、多行文字的水平垂直居中》。
+HTML Markup
+<p class="table"> <span class="tableCell">Centering multiple lines <br>in a block container.</span> <!--[if lte IE 7]><b></b><![endif]--> </p>
+CSS Code
+<style type="text/css"> .table { border: 1px solid orange; display: table; height: 200px; width: 200px; text-align: center; } .tableCell { display: table-cell; vertical-align: middle; } </style> <!--[if lte ie 7]> <style type="text/css"> .tableCell { display: inline-block; } b { display: inline-block; height: 100%; vertical-align: middle; width: 1px; } </style> <![endif]-->
+优点：
+这种方法的优点和方法三是一样的，不会有高度的限制。
+缺点：
+不好的地方就是这种方法为了让IE运行正常，需要额外增加一些标签，另外就是线盒型的标签种类有限制。不过用起来还是蛮方便的。
+方法六：
+这种方法是采用的display:inline-block，然后借助另一个元素的高度来实现居中
+Html Markup
+<div id="parent"> <div id="vertically_center"> <p>I am vertically centered!</p> </div> <div id="extra"><!-- ie comment --></div> </div>
+CSS Code
+<style type="text/css"> html, body{ height: 100%; } #parent { height: 500px; border: 1px solid red; } #vertically_center, #extra { display: inline-block; vertical-align: middle; } #extra { height: 100%; } </style> <!--[if lt IE 8]> <style type="text/css"> #vertically_center, #extra { display: inline; zoom: 1; } #extra { width: 1px; } </style> <![endif]-->
+优点：
+可以自适应高度，简单易懂
+缺点：
+需要给元素的父元素设置一个高度，这个高度可以是一个固定值或者百分值高度，另外需要增加一个额外的标签，当作线盒型，如div#extra，并且需要设置其高度为100%。另外就是ie6-7不支持display:inline-block，需要给他们另外写一个样式。
+这是一个很有意思的方法，但你要懂得如何使用display。有关于这种方法的操作，大家可以去看一看Jonathan Potter写的《CSS, Vertical Centering》。
+方法七：
+这个方法是针对多行内容居中，而且容器高度是可变的，方法很简单，就是给出上下一样的padding值
+Html Code
+<div class="columns"> <div class="item">test</div> </div>
+CSS Code
+.item {padding-top:30px;padding-bottom:30px;}
+优点：
+在所有浏览器下能正常工作，支持所有元素，简单易懂，结构清晰
+缺点：
+使用这种方法不能给容器固定高度，如果固定高度将无法达到效果。
+方法八：
+正如前面所述，如果元素固定高度后要实现垂直居中，用CSS实现很方便，但对于自适应高度的就比较棘手了。那么第七种方法，要给大家介绍的是使用jQuery的方法
+Html Markup
+<div class="container"> <p>Centered In The Middle Of The Page With jQuery</p> </div>
+CSS Code
+.container{ background-color:#338BC7; width:270px; height:150px; }
+jQuery Code
+$(document).ready(function(){ $(window).resize(function(){ $('.container').css({ position:'absolute', left: ($(window).width() - $('.container').outerWidth())/2, top: ($(window).height() - $('.container').outerHeight())/2 }); }); // 最初运行函数 $(window).resize(); });
+优点：
+这种方法，结构简单，易懂，不需要固定元素的大小。兼容各浏览器。
+缺点：
+需要调用jQuery，如果不支持js或者用户禁掉了js，那么将无法正常运行，那就是杯具了。
+上面这种方法对实现页面居中布局很方便，下面我根据上面的思路和方法二写了一个实现元素水平垂直居中的小插件
+jQuery Plugin
+(function($){ $.fn.vhAlign = function(){ return this.each(function(i){ //获取元素的内容高度 var h = Math.ceil($(this).height()); //outerHeight=padding+border+height var oh = Math.ceil($(this).outerHeight()); //取得margin-top值 var mt = Math.ceil(oh / 2); //取得元素宽度 var w = Math.ceil($(this).width()); //outerWidth=padding+border+width var ow = Math.ceil($(this).outerWidth()); //取得margin-left var ml = Math.ceil(ow / 2); //实现元素居中效果 $(this).css({ "margin-top": "-" + mt + "px", "top": "50%", "margin-left": "-" + ml + "px", "left": "50%", "width":w, "height":h, "position": "absolute" }); }); }; })(jQuery);
+Html Markup
+<div class="wrap"> <p>test jquery</p> </div>
+接下来需要调用刚才写好的jQuery插件
+<script type="text/javascript" src="vhAlign.js"></script>
+最后需要在div.wrap调用这个function
+<script type="text/javascript"> $(document).ready(function(){ $(".wrap").vhAlign(); }); </script>
+这里有一点需要特别注意，如果元素不是相对于body居中，那么需要在其父元素中进行相对定位。
+上面我们一起见证了八种不同方法实现元素的垂直居中效果，下面我们在简单的看一下如何实现元素的水平居中（其实上面有一些效果也实现了水平居中，你可以慢慢回想一下）。
+方法一：
+这种方法主要使用margin: auto配合元素的width来实现水平居中的效果
+Html Markup
+<div class="horizontal">content</div>
+CSS Code:
+.horizontal { width: 200px; margin: 0 auto; }
+使用上面方法实现元素水平居中一定要让元素满足两个条件：其一，元素需要有一个固定宽度值；其二元素的margin-left和margin-right都必须设置为auto，这两个条件少了任何一个都无法让元素达到水平居中的效果。此方法使用水平居中，支持所有浏览器运行，因此他也常用来实现Web页面水平居中的布局效果，如果用在布局，需要注意IE下的效果，换句话说，如果你的Web页面没有明确声明"!DOCTYPE"，那么在IE也会以怪异模式解析你的Web页面，此时上面这种办法将无法让你的页面实现水平居中，但你可以使用下面这种方法解决这个bug。
+Html Code:
+<div class="container"> 页面内容。... </div>
+CSS Code:
+body { text-align: center; } .container { text-align: left; width: 960px; margin: 0 auto; }
+方法二：
+实现固定宽度的水平居中，我们还可以使用绝对定位配合负的margin来实现，具体代码如下：
+Html Markup
+<div class="horizontal">content</div>
+CSS Code:
+.horizontal { width: 960px; position: absolute; left: 50%; margin-left: -480px; }
+这种方法有几点需要注意：其一要有一个固定宽度，其二对要居中的元素进行绝对定位，并且“left: 50%”；其三对此元素设置一个负的“margin-left”并且值等于宽度的一半，另外如果元素不是相对于浏览器的话，还需要在其父元素上设置一个相对定位“position: relative”。
+方法三：
+这种方法主要是针对单行文本居中或者前面介绍的table格式居，主要运用的是text-align:center让元素水平居中
+.testH{text-align:center;}
+上面主要是和大家一起探讨和学习了多种方法让元素实现垂直居中，大家可以在这几种方法上稍做改变就能实现其水平居中，这样就达到了元素水平垂直居中的效果。实现方法很多，而且他们也各有千秋，可以说他们各有各的好，各有各的坏，具体怎么让他们更适合你的实际应用，你可以仔细对比一下，我比较喜欢方法四，简单，兼容性强，只是需要增加一个额外的标签。说了这么多，希望能给需要的朋友有所帮助。
