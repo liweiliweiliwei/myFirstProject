@@ -1,0 +1,315 @@
+#ln_title, .content {
+    margin: 0 auto;
+    position: relative
+}
+
+#ln_title, #turnplate, .content {
+    position: relative
+}
+
+.content {
+    width: 10rem;
+    background-color: #fff;
+    font-family: PingFangSC-Regular, Helvetica, Arial, sans-serif;
+    overflow-x: hidden
+}
+
+#actrules, #luckyname {
+    background-color: #f6f6f6
+}
+
+.banner {
+    width: 10rem;
+    font-size: 0
+}
+
+.banner img {
+    width: 100%;
+    height: 100% ；
+}
+
+#tp_bkgrd, #turnplate {
+    height: 10.893rem;
+    width: 10rem
+}
+
+#turnplate img {
+    display: block;
+}
+
+#lottery_btn, #lottery_btn span {
+    width: 3.12rem;
+    height: 3.12rem;
+    position: absolute
+}
+
+#tp_canvas {
+    width: 9.773rem;
+    height: 9.773rem;
+    position: absolute;
+    top: .72rem;
+    left: .1135rem
+}
+
+.runanimation {
+    transition: all 6s ease;
+    -moz-transition: all 6s ease;
+    -webkit-transition: all 6s ease;
+    -o-transition: all 6s ease;
+    -ms-transition: all 6s ease
+}
+
+#lottery_btn {
+    display: block;
+    top: 3.96rem;
+    left: 3.44rem
+}
+
+#lottery_btn img {
+    width: 100%;
+    height: 100%
+}
+
+#lottery_btn span {
+    font-size: .88rem;
+    color: #fff;
+    line-height: 3.12rem;
+    text-align: center;
+    top: 0;
+    left: 0
+}
+
+#pointer {
+    width: .987rem;
+    height: 1.32rem;
+    position: absolute;
+    top: .133rem;
+    left: 4.52rem
+}
+
+#ln_title span, .g_title span {
+    display: block;
+    font-weight: 500;
+    top: .16rem;
+    left: 0;
+    text-align: center
+}
+/*
+旧代码，不用
+#luckyname {
+    position: relative;
+    width: 10rem;
+    height: 5.72rem;
+}
+
+
+#ln_title {
+    width: 10rem;
+    height:5.72rem;
+    background: url("http://pic.ghs.net/public/images/03/2d/22/d971e177d9d86c50dd848efbe5732cee831b1f38.jpg") no-repeat;
+    background-size: 10rem 6rem
+}
+
+#ln_title span {
+    width: 7.2rem;
+    height: .667rem;
+    font-size: .48rem;
+    color: #000;
+    line-height: .667rem;
+    position: absolute
+}
+
+#roll {
+    position: absolute;
+    width: 10rem;
+    height: 1.84rem;
+    margin-top: 0rem;
+    overflow: hidden;
+    top: 2rem;
+}
+
+[data-dpr="2"] #roll {
+    height: 200px
+}
+
+[data-dpr="3"] #roll {
+    height: 450px
+}
+
+#express {
+    font-size: 0
+}
+
+#express li {
+    height: 28px;
+    font-size: 14px;
+    line-height: 2em;
+    color: #4c4c4c;
+    text-align: center
+}
+
+[data-dpr="2"] #express li {
+    height: 56px;
+    font-size: 35px
+}
+
+[data-dpr="3"] #express li {
+    height: 84px;
+    font-size: 60px
+}
+*/
+#luckyname {
+    position: relative;
+    width: 10rem;
+    height: 5.72rem;
+    /*padding-top: .467rem*/
+}
+
+#ln_title {
+    width: 10rem;
+    height: 5.72rem;
+    background: url("http://pic.ghs.net/public/images/03/2d/22/d971e177d9d86c50dd848efbe5732cee831b1f38.jpg") no-repeat;
+    background-size: 10rem 5.72rem
+}
+
+#ln_title span {
+    width: 7.2rem;
+    height: .667rem;
+    font-size: .48rem;
+    color: #000;
+    line-height: .667rem;
+    position: absolute
+}
+
+#roll {
+    position: absolute;
+    width: 8rem;
+    height: 3.1rem;/*1.84rem*/
+    overflow: hidden;
+    top: 1.62rem;
+    left:0;
+    right:0;
+    margin:0 auto;
+}
+
+#express {
+    font-size: 0
+}
+
+#express li {
+    height: 28px;
+    font-size: 15px;
+    line-height: 2em;
+    color: #4c4c4c;
+    text-align: center;
+    overflow: hidden;
+}
+
+[data-dpr="2"] #express li {
+    height: 56px;
+    font-size: 30px
+}
+
+[data-dpr="3"] #express li {
+    height: 84px;
+    font-size: 60px
+}
+
+
+#acttime {
+    width: 10rem;
+    height: 3.387rem;
+    background-image: url(http://mall.ghs.net/public/images/53/32/da/fcd3f7e1274bd96523cd7a11c0a4dadf7f8cf326.jpg);
+    background-size: 10rem 3.387rem
+}
+
+#actrules {
+    width: 10rem;
+    height: 1.627rem;
+    background-color: #fd6181
+}
+
+#moreGoods {
+    width: 10rem;
+    height: 3.253rem;
+    background-color: #ffe9ee;
+    position: relative;
+}
+
+#moreGoods div {
+    width: 3.7333rem;
+    height: 1.2133rem;
+    background: url("http://mall.ghs.net/public/images/9f/72/96/7b697319c1357a326fb5b4052caaf51b36b557c5.png") no-repeat center;
+    background-size: 3.7333rem 1.2133rem;
+    position: absolute;
+    top: 1.02rem;
+    left: 3.133rem;
+}
+
+#actrules a {
+    display: block;
+    width: 5rem;
+    height: 1.627rem;
+    margin-right: 2.5rem;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.627rem;
+    color: #ffffff;
+    float: right
+}
+
+[data-dpr="2"] #actrules a {
+    font-size: 36px
+}
+
+[data-dpr="3"] #actrules a {
+    font-size: 60px
+}
+
+.g_title {
+    width: 7.2rem;
+    height: 1.12rem;
+    margin: .8rem auto;
+    background: url(http://www.ghs.net/public/images/ad/8e/9c/ea9e185dbc75c9d1b57f9ab3c2cadc9dc7e7d733.png) no-repeat;
+    background-size: 7.2rem 1.12rem;
+    position: relative
+}
+
+.g_title span {
+    width: 7.2rem;
+    height: .667rem;
+    font-size: .48rem;
+    color: #000;
+    line-height: .667rem;
+    position: absolute
+}
+
+#num {
+    position: relative;
+    width: 10rem;
+    height: 4.373rem;
+    background: url("http://pic.ghs.net/public/images/11/76/81/495a8aefaf4cd936f38bb333776eed84dfc335cf.jpg") no-repeat center;
+    background-size: 10rem 4.373rem;
+}
+
+#num p {
+    width: 0.6rem;
+    height: 0.5rem;
+    position: absolute;
+    left: 3.9rem;
+    top: 2.76rem;
+}
+
+#my_num {
+    display: block;
+    width: 0.6rem;
+    height: 0.5rem;
+    font-size:0.533rem;
+    color: #ffffff;
+    text-align: center;
+    transform:rotate(-5deg);
+    -ms-transform:rotate(-5deg);
+    -moz-transform:rotate(-5deg);
+    -webkit-transform:rotate(-5deg);
+    -o-transform:rotate(-5deg);
+}

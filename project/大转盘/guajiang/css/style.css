@@ -1,0 +1,175 @@
+.content{
+	width: 10rem;
+	background-color: #ffffff;
+	position: relative;
+	margin: 0 auto;
+	font-family: PingFangSC-Regular, Helvetica, Arial, sans-serif;
+	overflow-x: hidden;
+}
+.banner{
+	width: 10rem;
+	font-size: 0;
+}
+.banner img{
+	width: 100%;
+	height: 100%;
+}
+#turnplate{
+	width: 10.0rem;
+	height: 10.867rem;
+	position: relative;
+}
+#tp_bkgrd{
+	width: 10.0rem;
+	height: 10.867rem;
+}
+#tp_canvas{
+	width: 8.64rem;
+	height: 8.64rem;
+	position: absolute;
+	top: 0.72rem;
+	left: 0.68rem;
+}
+.runanimation{
+	transition: all 6s ease;
+    -moz-transition: all 6s ease; /* Firefox 4 */
+    -webkit-transition: all 6s ease; /* Safari 和 Chrome */
+    -o-transition: all 6s ease; /* Opera */
+	-ms-transition: all 6s ease; /* ie */
+}
+#lottery_btn{
+	display: block;
+	width: 3.12rem;
+	height: 3.12rem;
+	position: absolute;
+	top: 3.48rem;
+	left: 3.44rem;
+}
+#lottery_btn img{
+	width: 100%;
+	height: 100%;
+}
+#lottery_btn span{
+	width: 3.12rem;
+	height: 3.12rem;
+	font-size: 0.88rem;
+	color: #ffffff;
+	line-height: 3.12rem;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#pointer{
+	width: 0.853rem;
+	height: 1.253rem;
+	position: absolute;
+	top: 0.133rem;
+	left: 4.573rem;
+}
+#luckyname{
+	width: 10rem;
+	height: 6.987rem;
+	background-color: #f6f6f6;
+	padding-top: 0.467rem;
+}
+#ln_title{
+	width: 7.2rem;
+	height: 1.12rem;
+	margin: 0 auto;
+	background: url("../images/title_yellow.png") no-repeat;
+	background-size: 7.2rem 1.12rem;
+	position: relative;
+}
+#ln_title span{
+	display: block;
+	width: 7.2rem;
+	height: 0.667rem;
+	font-size: 0.48rem;
+	font-weight: 500;
+	color: #000000;
+	line-height: 0.667rem;
+	text-align: center;
+	position: absolute;
+	top: 0.16rem;
+	left: 0;
+}
+#roll{
+	width: 10rem;
+	height: 168px;
+	margin-top: 0.453rem;
+	overflow: hidden;
+}
+[data-dpr="2"] #roll{
+	height: 336px;
+}
+[data-dpr="3"] #roll{
+	height: 504px;
+}
+#express{
+	font-size: 0;
+}
+#express li{
+	height: 28px;
+	font-size: 14px;
+	line-height: 2em;
+	color: #4c4c4c;
+	text-align: center;
+}
+[data-dpr="2"] #express li{
+	height: 56px;
+	font-size: 28px;
+}
+[data-dpr="3"] #express li{
+	height: 84px;
+	font-size: 42px;
+}
+#acttime{
+	width: 10rem;
+	height: 3.387rem;
+	background-image: url('../images/acttime.jpg');
+	background-size: 10rem 3.387rem;
+}
+#actrules{
+	width: 10rem;
+	height: 1.627rem;
+	background-color: #f6f6f6;
+}
+#actrules a{
+	display: block;
+	width: 5rem;
+	height: 1.627rem;
+	margin-right: 0.4rem;
+	font-size: 16px;
+	text-align: right;
+	line-height: 1.627rem;
+	color: #000000;
+	float: right;
+}
+[data-dpr="2"] #actrules a{
+	font-size: 30px;
+}
+[data-dpr="3"] #actrules a{
+	font-size: 46px;
+}
+.g_title{
+	width: 7.2rem;
+	height: 1.12rem;
+	margin: 0.8rem auto;
+	background: url("../images/title_yellow.png") no-repeat;
+	background-size: 7.2rem 1.12rem;
+	position: relative;
+}
+.g_title span{
+	display: block;
+	width: 7.2rem;
+	height: 0.667rem;
+	font-size: 0.48rem;
+	font-weight: 500;
+	color: #000000;
+	line-height: 0.667rem;
+	text-align: center;
+	position: absolute;
+	top: 0.16rem;
+	left: 0;
+}

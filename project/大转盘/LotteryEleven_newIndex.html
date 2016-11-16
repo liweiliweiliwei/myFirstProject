@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <title>11.11分享赢大奖</title>
+    <script src="{pigcms::RES}/css/guajiang/js1111/flexible_css.js"></script>
+    <script src="{pigcms::RES}/css/guajiang/js1111/flexible.js"></script>
+    <link href="{pigcms::RES}/css/guajiang/css1111/styleTenNew.min.css" rel="stylesheet"/>
+    <link href="{pigcms::RES}/css/guajiang/css1111/dialogTen.min.css" rel="stylesheet"/>
+    <link href="{pigcms::RES}/css/guajiang/css1111/addressTen.min.css" rel="stylesheet"/>
+    <link href="{pigcms::RES}/css/guajiang/css1111/goods.min.css" rel="stylesheet"/>
+</head>
+<style type="text/css">
+    body{
+        overflow: hidden;
+        width: 10rem;
+        margin: 0 auto;
+    }
+    .pointsVenue {
+        display: none;
+        position: fixed;
+        bottom: 1.6rem;
+        right: 0rem;
+        z-index:50
+    }
+
+    .pointsVenue li a {
+        display: block;
+        width: 5rem;
+        height: 1.6rem;
+        background-color: #ff599f;
+        color: #ffffff;
+        text-align: center;
+        line-height: 1.6rem;
+        font-size: 0.6rem;
+        border-top: 1px solid #ffffff;
+        z-index: 50;
+    }
+
+    #bottomPart {
+        display: none;
+    }
+    #bottomPart img{
+        display: block;
+    }
+
+    #doubleElevenGoods {
+        width: 10rem;
+        background-color: #ffe9ee;
+    }
+
+    #doubleElevenGoods ul {
+        overflow: hidden;
+    }
+
+    #doubleElevenGoods ul li {
+        display: inline-block;
+        position: relative;
+        background-color: #ffffff;
+        float: left;
+        width: 4.64rem;
+        height: 6.1066rem;
+        box-sizing: border-box;
+        border: 0.02666rem solid #000;
+        margin-left: 0.24rem;
+        margin-bottom: 0.24rem;
+    }
+
+    #doubleElevenGoods ul li img {
+        display: block;
+        width: 4.58668rem;
+        height: 4.58668rem;
+    }
+
+    #doubleElevenGoods .doubleElevenGoodsName {
+        color: #000;
+        font-size: 0.32rem;
+        text-align: center;
+    }
+
+    #doubleElevenGoods ul li div {
+        position: absolute;
+        color: #fc3961;
+        font-size: 0.36rem;
+        bottom: 0.33333rem;
+        left: 0.24rem;
+    }
+
+    #doubleElevenGoods .doubleElevenGoodsPrice {
+        font-size: 0.46rem;
+    }
+    #doubleElevenGoods .nowBuy {
+        color: #fff;
+        width: 1.933rem;
+        height: 0.453rem;
+        font-size: 12px;
+        line-height: 0.453rem;
+        background: #fc3961;
+        font-family:inherit;
+        border: 1px solid #000;
+        -webkit-border-radius: 0.227rem;
+        -moz-border-radius: 0.227rem;
+        border-radius: 0.227rem;
+        position: absolute;
+        left: 2.1rem;
+        top: 0.07rem;
+    }
+
+    [data-dpr="2"] #doubleElevenGoods .nowBuy {font-size: 24px;}
+    [data-dpr="3"] #doubleElevenGoods .nowBuy {font-size: 36px;}
+    .banner {
+        position: relative;
+    }
+
+    .banner .clickShare {
+        position: absolute;
+        width: 4rem;
+        height: 1.4rem;
+        top: 22.6rem;
+        left: 3rem;
+    }
+
+    .banner .clickShareWindow {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 10rem;
+        height:17.78666rem;
+        z-index: 200;
+    }
+</style>
+<body id="topp">
+<div class="content" id="main">
+    <div class="banner">
+        <img style="width:10.0rem;height:5.96rem;"
+             data-src="http://pic.ghs.net/public/images/5f/cb/b2/6d2dbf419f30d532dfcb2424a12d73ddc0507073.jpg"/>
+        <img style="width:10.0rem;height:2.66rem;"
+             data-src="http://pic.ghs.net/public/images/45/82/ee/82a9dcf8e7691df7a00de9c9f4ef384e339d4662.jpg"/>
+        <img style="width:10.0rem;height:2.146rem;"
+             data-src="http://pic.ghs.net/public/images/f2/3a/59/9b058f6df5cc91bb106f7f7f95ac8124615df250.jpg"/>
+        <img style="width:10.0rem;height:4.906rem;"
+             data-src="http://pic.ghs.net/public/images/e4/c3/11/527d1c8c5223126d32ce7f3e639269d7b4ecae75.jpg"/>
+        <img style="width:10.0rem;height:6.786rem;"
+             data-src="http://pic.ghs.net/public/images/e4/74/ea/17a644e0b5e65b0c26f07cbb231d385a61c9e55f.jpg"/>
+        <img style="width:10.0rem;height:1.8rem;"
+             data-src="http://pic.ghs.net/public/images/d1/21/e0/99262947f5a7b3dfc989ba93b4bbcdab2d462268.jpg"/>
+        <div id="num"><p><span id="my_num">{pigcms:$times}</span></p></div>
+        <div class="clickShare"></div>
+        <img src="http://pic.ghs.net/public/images/7a/c2/8c/cd2c3417c2cea080730f7222d7c6a04cf5767b0a.png"
+             class="clickShareWindow">
+    </div>
+
+    <div id="turnplate">
+        <img id="tp_bkgrd"
+             data-src="http://pic.ghs.net/public/images/45/70/d6/f27f9b1060c3909aa6fcc725b6a8864a2bf38e38.jpg"/>
+        <img id="tp_canvas" class="runanimation" data-src="http://pic.ghs.net/public/images/8d/03/30/841ac24272d4b4bbded5a87a892c20d37168c43b.png"/>
+        <a id="lottery_btn" href="javascript:void(0)">
+            <img id="lottery_btn_img"
+                 src="http://mall.ghs.net/public/images/ae/79/ff/b2524098d46e62825d2703d81839345a8b1fe3bd.png"/>
+            <span>开始</span>
+        </a>
+        <img id="pointer"
+             data-src="http://mall.ghs.net/public/images/b0/c9/3b/10da8d72e9fd49da1c6c6a21a912a7ef31069300.png"/>
+    </div>
+    <div id="luckyname">
+        <div id="ln_title"/>
+        <!--<span>中奖名单</span>-->
+        <div id="roll">
+            <ul id="express">
+                <foreach name="winnerRecord" item="value">
+                    <li>{pigcms:$value.wecha_name}</li>
+                </foreach>
+            </ul>
+            <div id="rollcopy"></div>
+        </div>
+    </div>
+
+</div>
+<!--<div id="acttime"></div>-->
+<div id="actrules"><a
+        href="/index.php?g=Wap&m=LotteryEleven&a=rules&token={pigcms:$Dazpan.token}&wecha_id={pigcms:$wecha_id}&oneid={pigcms:$Dazpan.wecha_id}&id={pigcms:$Dazpan.lid}&rid={pigcms:$Dazpan.rid}">活动细则&nbsp;&gt;&gt;</a>
+</div>
+<div id="moreGoods">
+    <div></div>
+</div>
+
+<div id="doubleElevenGoods">
+    <ul>
+        <li><a href="product-9114352.html">
+            <img src="http://www.ghs.net/public/images/50/8c/9d/3f4ad1de4fb4de16b9812e236197126a205882da.jpg">
+            <p class="doubleElevenGoodsName">梦百合-舒睡加大记忆枕</p>
+            <div>￥<span class="doubleElevenGoodsPrice">599.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9118465.html">
+            <img src="http://www.ghs.net/public/images/f0/2a/ee/6a8e372cc7e3c1cf4d420a1a577e3a1f91565537.jpg">
+            <p class="doubleElevenGoodsName">韩国惠人原汁机HUZK24FR</p>
+            <div>￥<span class="doubleElevenGoodsPrice">2198.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9116230.html">
+            <img src="http://www.ghs.net/public/images/d2/9c/72/9e5ad26bd801daf60eac06109e8605a2251debed.jpg">
+            <p class="doubleElevenGoodsName">韩国现代炒菜机咖啡色</p>
+            <div>￥<span class="doubleElevenGoodsPrice">1299.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9113679.html">
+            <img src="http://www.ghs.net/public/images/ea/cf/a1/9c3ebb224c0231e1ee78c76cf2dbbde54e597327.jpg">
+            <p class="doubleElevenGoodsName">海尔头皮按摩器HMA-T12</p>
+            <div>￥<span class="doubleElevenGoodsPrice">699.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9117720.html">
+            <img src="http://www.ghs.net/public/images/4c/90/5c/362cbdfa081552e5c1af8cca9d9c4980bb18e2ee.jpg">
+            <p class="doubleElevenGoodsName">韩国现代行车记录仪HCR-660</p>
+            <div>￥<span class="doubleElevenGoodsPrice">899.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9117796.html">
+            <img src="http://www.ghs.net/public/images/c2/d5/1f/38287de816c65a9b1dd3f56d0a81f5726115d5e8.jpg">
+            <p class="doubleElevenGoodsName">菲仕乐家庭汤两件组</p>
+            <div>￥<span class="doubleElevenGoodsPrice">1080.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9118206.html">
+            <img src="http://www.ghs.net/public/images/5a/b9/e7/8811bb1c596986cbf87bbbf2dfa23b0e2ebe0770.jpg">
+            <p class="doubleElevenGoodsName">丝塔芙家庭优惠套装</p>
+            <div>￥<span class="doubleElevenGoodsPrice">269.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9118302.html">
+            <img src="http://www.ghs.net/public/images/61/ee/08/29c8a1fedb954d7a2e368e25260a38c846f316cc.jpg">
+            <p class="doubleElevenGoodsName">海尔钛锗塑颜棒纯钛金HMA-F10</p>
+            <div>￥<span class="doubleElevenGoodsPrice">698.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9118306.html">
+            <img src="http://www.ghs.net/public/images/c9/81/f4/8f9957ab7de16c9ef0c85e28a8704d3ca3b9530e.jpg">
+            <p class="doubleElevenGoodsName">海尔洁面仪绿色款HMA-F20</p>
+            <div>￥<span class="doubleElevenGoodsPrice">498.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9118300.html">
+            <img src="http://www.ghs.net/public/images/7d/84/3c/0e8712574bfaf93ed83d036066ea2b1b4c4def52.jpg">
+            <p class="doubleElevenGoodsName">海尔电子血压计高端款BF1210</p>
+            <div>￥<span class="doubleElevenGoodsPrice">498.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9119826.html">
+            <img src="http://www.ghs.net/public/images/3b/31/cd/41946fa1636b1f6b8e7721494635c083a41b730a.jpg">
+            <p class="doubleElevenGoodsName">帕蒂娜乳胶枕温馨组</p>
+            <div>￥<span class="doubleElevenGoodsPrice">319.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9116603.html">
+            <img src="http://www.ghs.net/public/images/32/4d/4f/6c91503bac590f2bce73be4d487c2d61b39772fb.jpg">
+            <p class="doubleElevenGoodsName">东菱自动投料面包机BM-2401</p>
+            <div>￥<span class="doubleElevenGoodsPrice">399.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9116605.html">
+            <img src="http://www.ghs.net/public/images/0c/59/62/56bb1bb1a9e9938b1eec0d1a6c72baaf6df38a78.jpg">
+            <p class="doubleElevenGoodsName">东菱多功能搅拌机BL-9310K</p>
+            <div>￥<span class="doubleElevenGoodsPrice">299.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9116068.html">
+            <img src="http://www.ghs.net/public/images/f4/f2/00/0635003e3b0afdb2c3bcf303a1eb2cca0ad349ff.jpg">
+            <p class="doubleElevenGoodsName">安妮雍容唯美珍珠套装</p>
+            <div>￥<span class="doubleElevenGoodsPrice">288.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9113467.html">
+            <img src="http://www.ghs.net/public/images/47/4f/92/c9ba01c0003e34bd37fb921d9c4f949455d31639.jpg">
+            <p class="doubleElevenGoodsName">爱度冷榨亚麻籽油5罐礼盒装</p>
+            <div>￥<span class="doubleElevenGoodsPrice">298.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+        <li><a href="product-9115234.html">
+            <img src="http://www.ghs.net/public/images/4d/ed/d6/eb0cec01cd12a5a419d51980a5da5043f541be60.jpg">
+            <p class="doubleElevenGoodsName">御泥坊红石榴鲜活矿物睡眠面膜</p>
+            <div>￥<span class="doubleElevenGoodsPrice">218.00</span><button class="nowBuy">立即抢购</button></div>
+        </a></li>
+    </ul>
+</div>
+
+<div id="empty" style="width: 10rem;height: 1.6rem"></div>
+<ul class="pointsVenue">
+    <li><a href="http://mall.ghs.net/wap/act-501.html?uid={pigcms::$member_id}">下厨馆</a></li>
+    <li><a href="http://mall.ghs.net/wap/act-502.html?uid={pigcms::$member_id}">家居馆</a></li>
+    <li><a href="http://mall.ghs.net/wap/act-503.html?uid={pigcms::$member_id}">美食馆</a></li>
+    <li><a href="http://mall.ghs.net/wap/act-506.html?uid={pigcms::$member_id}">洗护馆</a></li>
+    <li><a href="http://mall.ghs.net/wap/act-507.html?uid={pigcms::$member_id}">服饰馆</a></li>
+</ul>
+<div style="width:10rem;position:fixed;bottom: 0rem;z-index: 100" id="bottomPart">
+    <a href="http://mall.ghs.net/wap/act-1611.html?uid={pigcms::$member_id}" style="float: left">
+        <img src="http://pic.ghs.net/public/images/96/38/75/d3b36df863a9055eb92c9dd10c665f6b6480870a.png" style="width:5rem;height: 1.6rem;border-right: 1px solid #FFFFFF;box-sizing: border-box"></a>
+
+    <img src="http://pic.ghs.net/public/images/44/8c/18/626eca2cfeec068b068b2d1f4a266b93cfea27af.jpg" style="width:5rem;height: 1.6rem" class="partVenue">
+</div>
+
+<div id="dialog"></div>
+</div>
+<div class="content" id="address">
+    <p id="ad_title">*&nbsp;领取实物奖品需要填写收货地址</p>
+    <ul class="ad_ul">
+        <li>收货人：<input id="ad_name" type="text" value=""/></li>
+        <li id="ad_setname">*&nbsp;请填写正确的收货人</li>
+        <li>手机号：<input id="ad_phone" type="text" value="" maxlength="11"/></li>
+        <li id="ad_setphone">*&nbsp;请填写正确的手机号码</li>
+        <li>详细地址：<input id="ad_address" type="text" value=""/></li>
+        <li id="ad_setaddress">*&nbsp;请填写正确的地址</li>
+    </ul>
+    <a id="ad_submitbtn" class="ad_submitbtn" href="javascript:void(0)">
+        <span>确定</span>
+    </a>
+</div>
+<script src="{pigcms::RES}/css/guajiang/js1111/zepto.min.js"></script>
+<script src="{pigcms::RES}/css/guajiang/js1111/lazyload.js"></script>
+<script src="{pigcms::RES}/css/guajiang/js1111/dialog.js"></script>
+<script src="{pigcms::RES}/css/guajiang/js1111/rollNew.js"></script>
+<script src="{pigcms::RES}/css/guajiang/js1111/sendadd.js"></script>
+<script>
+
+    window.onscroll = function () {
+        $(".pointsVenue").hide();
+        var durTop = $("body").scrollTop();
+        if (durTop > 0) {
+            $("#bottomPart").show();
+        } else {
+            $("#bottomPart").hide();
+        }
+    };
+
+    $("#bottomPart .partVenue").on("touchend", function (e) {
+        $(".pointsVenue").toggle();
+    });
+    $(".pointsVenue li a").on("touchend", function (e) {
+        $(this).css({"background-color": "#ff03e4"});
+    });
+
+
+
+
+
+    $(function () {
+        var lottery = new Lottery();
+        lottery.init();
+    });
+    function Lottery() {
+        this.requestStatus = true;//为1时，请求数据；0--btn不再请求数据
+        this.status = 0;//本地储存服务器返回状态，不再二次调用
+        this.oldAngle = 0; //记录旋转的角度
+        //旋转角度
+        this.angle = {
+            getHundred: 22.5,//                   100礼金券
+            getNone: 67.5,    //                   谢谢参与
+//            getSeventy: 112.5,    //              70礼金券
+            getHundredAndFifty: 112.5,//           150礼金券
+            getTcl: 157.5, //                       tcl加湿器
+//            getFifty: 202.5,    //                  50礼金券
+            getFiveRmb: 202.5,    //                 5元预存款
+//            getHerborist: 247.5, //                佰草集太极泥
+            getWine: 247.5, //                        葡萄酒
+//            getThirty: 292.5, //                   30礼金券
+            getThreeRmb: 292.5, //                   3元预存款
+            getIphone: 337.5 //                  iphone7手机
+        };
+        //弹框内容
+        this.dialogstr = {
+            //error
+            noid: '<div id=' + '"' + 'dialog_overlay' + '"' + '></div><div id=' + '"' + 'dialog_content' + '"' + '><a id=' + '"' + 'dc_rightbtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/cd/70/67/1ea434b9e909ded5c7ed3ea01c89deb49d042cd2.png' + '"' + ' /></a><div id=' + '"' + 'dc_error' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/3f/1b/7b/9c764adfc829431fff7b823d690ebc606d043d7a.png' + '"' + ' /><div id=' + '"' + 'dc_twoline' + '"' + '>您的app版本过低<br/>请更新后再参与抽奖</div></div><a id=' + '"' + 'dc_bottombtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><span>我知道了</span></a></div>',
+            nopay: '<div id=' + '"' + 'dialog_overlay' + '"' + '></div><div id=' + '"' + 'dialog_content' + '"' + '><a id=' + '"' + 'dc_rightbtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/cd/70/67/1ea434b9e909ded5c7ed3ea01c89deb49d042cd2.png' + '"' + ' /></a><div id=' + '"' + 'dc_error' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/c9/a5/ce/b6cfd3d52a88132ab9f6c78512aa7ad241e5a727.png' + '"' + ' /><div id=' + '"' + 'dc_twoline' + '"' + '>只有上月有效订单才可抽奖哦</div></div><a id=' + '"' + 'dc_bottombtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><span>我知道了</span></a></div>',
+            nochange: '<div id=' + '"' + 'dialog_overlay' + '"' + '></div><div id=' + '"' + 'dialog_content' + '"' + '><a id=' + '"' + 'dc_rightbtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/cd/70/67/1ea434b9e909ded5c7ed3ea01c89deb49d042cd2.png' + '"' + ' /></a><div id=' + '"' + 'dc_error' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/b4/00/ed/53a5d01baa857c8a211b6742b666bda627abbdff.png' + '"' + ' /><p>您的抽奖机会已用完</p></div><a id=' + '"' + 'dc_bottombtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><span>我知道了</span></a></div>',
+            //没有中奖
+            getNone: '<div id=' + '"' + 'dialog_overlay' + '"' + '></div><div id=' + '"' + 'dialog_content' + '"' + '><a id=' + '"' + 'dc_rightbtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/cd/70/67/1ea434b9e909ded5c7ed3ea01c89deb49d042cd2.png' + '"' + ' /></a><div id=' + '"' + 'dc_error' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/3f/1b/7b/9c764adfc829431fff7b823d690ebc606d043d7a.png' + '"' + ' /><p>很抱歉您没有抽中<br/></p></div><a id=' + '"' + 'dc_bottombtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><span>我知道了</span></a></div>',
+//			toMore : '<div id='+'"'+'dialog_overlay'+'"'+'></div><div id='+'"'+'dialog_content'+'"'+'><a id='+'"'+'dc_rightbtn'+'"'+' class='+'"'+'dc_closebtn'+'"'+' href='+'"'+'javascript:void(0)'+'"'+'><img src='+'"'+'http://www.ghs.net/public/images/cd/70/67/1ea434b9e909ded5c7ed3ea01c89deb49d042cd2.png'+'"'+' /></a><div id='+'"'+'dc_error'+'"'+'><img src='+'"'+'http://www.ghs.net/public/images/c9/a5/ce/b6cfd3d52a88132ab9f6c78512aa7ad241e5a727.png'+'"'+' /><p>不要气馁，再接再厉</p></div><a id='+'"'+'dc_bottombtn'+'"'+' class='+'"'+'dc_closebtn'+'"'+' href='+'"'+'javascript:void(0)'+'"'+'><span>再来一次</span></a></div>',
+            getWine: '<div id=' + '"' + 'dialog_overlay' + '"' + '></div><div id=' + '"' + 'dialog_content' + '"' + '><a id=' + '"' + 'dc_rightbtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/cd/70/67/1ea434b9e909ded5c7ed3ea01c89deb49d042cd2.png' + '"' + ' /></a><div class=' + '"' + 'dc_success' + '"' + ' id=' + '"' + 'dcs_goods' + '"' + '><div id=' + '"' + 'dg_title' + '"' + '>恭喜您获得：</div><img src=' + '"' + 'http://pic.ghs.net/public/images/4e/5f/47/b6472fbddddd593088c867daf2e65c60c8dc24bf.jpg' + '"' + ' /><div id=' + '"' + 'dg_name' + '"' + '>德圣保罗葡萄酒（12瓶组）<br/><p style=' + '"' + 'text-align:left' + '"' + '>(您的中奖信息我们已经记录，客服人员会在3-5个工作日内和您联系。请保持手机畅通。)</p></div></div></div>',
+            getWineSure: '<div id=' + '"' + 'dialog_overlay' + '"' + '></div><div id=' + '"' + 'dialog_content' + '"' + '><a id=' + '"' + 'dc_rightbtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/cd/70/67/1ea434b9e909ded5c7ed3ea01c89deb49d042cd2.png' + '"' + ' /></a><div class=' + '"' + 'dc_success' + '"' + ' id=' + '"' + 'dcs_goods' + '"' + '><div id=' + '"' + 'dg_title' + '"' + '>恭喜您获得：</div><img src=' + '"' + 'http://pic.ghs.net/public/images/4e/5f/47/b6472fbddddd593088c867daf2e65c60c8dc24bf.jpg' + '"' + ' /><div id=' + '"' + 'dg_name' + '"' + '>它正向你飞奔来，可在<span>&nbsp;我的-全部订单-待收货&nbsp;</span>中查看</div></div><a id=' + '"' + 'dc_goodsclosebtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><span>确定</span></a></div>',
+            getlijin: '<div id=' + '"' + 'dialog_overlay' + '"' + '></div><div id=' + '"' + 'dialog_content' + '"' + '><a id=' + '"' + 'dc_rightbtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/cd/70/67/1ea434b9e909ded5c7ed3ea01c89deb49d042cd2.png' + '"' + ' /></a><div class=' + '"' + 'dc_success' + '"' + ' id=' + '"' + 'dcs_lijin' + '"' + '><div id=' + '"' + 'lj_title' + '"' + '>恭喜您获得：</div><div id=' + '"' + 'lj_img' + '"' + '></div><div id=' + '"' + 'lj_tips' + '"' + '>它已跑到您的账户，可在<span>&nbsp;我的-我的钱包-礼金券&nbsp;</span>中查看</div></div><a id=' + '"' + 'dc_bottombtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><span>确定</span></a></div>',
+            getrmb: '<div id=' + '"' + 'dialog_overlay' + '"' + '></div><div id=' + '"' + 'dialog_content' + '"' + '><a id=' + '"' + 'dc_rightbtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/cd/70/67/1ea434b9e909ded5c7ed3ea01c89deb49d042cd2.png' + '"' + ' /></a><div class=' + '"' + 'dc_success' + '"' + ' id=' + '"' + 'dcs_lijin' + '"' + '><div id=' + '"' + 'lj_title' + '"' + '>恭喜您获得：</div><div id=' + '"' + 'lj_img' + '"' + '></div><div id=' + '"' + 'lj_tips' + '"' + '>它已跑到您的账户，可在<span>&nbsp;我的-我的钱包-预存款&nbsp;</span>中查看</div></div><a id=' + '"' + 'dc_bottombtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><span>确定</span></a></div>',
+            getTcl: '<div id=' + '"' + 'dialog_overlay' + '"' + '></div><div id=' + '"' + 'dialog_content' + '"' + '><a id=' + '"' + 'dc_rightbtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/cd/70/67/1ea434b9e909ded5c7ed3ea01c89deb49d042cd2.png' + '"' + ' /></a><div class=' + '"' + 'dc_success' + '"' + ' id=' + '"' + 'dcs_goods' + '"' + '><div id=' + '"' + 'dg_title' + '"' + '>恭喜您获得：</div><img src=' + '"' + 'http://mall.ghs.net/public/images/f0/c4/eb/488c41bb47112913cd59f1a5f08c539bbd7d0266.jpg' + '"' + ' /><div id=' + '"' + 'dg_name' + '"' + '>TCL加湿器<br/><p style=' + '"' + 'text-align:left' + '"' + '>(您的中奖信息我们已经记录，客服人员会在3-5个工作日内和您联系。请保持手机畅通。)</p></div></div></div>',
+            getTclSure: '<div id=' + '"' + 'dialog_overlay' + '"' + '></div><div id=' + '"' + 'dialog_content' + '"' + '><a id=' + '"' + 'dc_rightbtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/cd/70/67/1ea434b9e909ded5c7ed3ea01c89deb49d042cd2.png' + '"' + ' /></a><div class=' + '"' + 'dc_success' + '"' + ' id=' + '"' + 'dcs_goods' + '"' + '><div id=' + '"' + 'dg_title' + '"' + '>恭喜您获得：</div><img src=' + '"' + 'http://mall.ghs.net/public/images/f0/c4/eb/488c41bb47112913cd59f1a5f08c539bbd7d0266.jpg' + '"' + ' /><div id=' + '"' + 'dg_name' + '"' + '>它正向你飞奔来，可在<span>&nbsp;我的-全部订单-待收货&nbsp;</span>中查看</div></div><a id=' + '"' + 'dc_goodsclosebtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><span>确定</span></a></div>',
+            getIphone: '<div id=' + '"' + 'dialog_overlay' + '"' + '></div><div id=' + '"' + 'dialog_content' + '"' + '><a id=' + '"' + 'dc_rightbtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/cd/70/67/1ea434b9e909ded5c7ed3ea01c89deb49d042cd2.png' + '"' + ' /></a><div class=' + '"' + 'dc_success' + '"' + ' id=' + '"' + 'dcs_goods' + '"' + '><div id=' + '"' + 'dg_title' + '"' + '>恭喜您获得：</div><img src=' + '"' + 'http://mall.ghs.net/public/images/c2/a8/df/9f0ba28e392d975889f2a33cfedefd75aac00ac9.jpg' + '"' + ' /><div id=' + '"' + 'dg_name' + '"' + '>iPhone&nbsp;7&nbsp;(颜色随机)<br/><p style=' + '"' + 'text-align:left' + '"' + '>(您的中奖信息我们已经记录，客服人员会在3-5个工作日内和您联系。请保持手机畅通。)</p></div></div></div>',
+            getIphoneSure: '<div id=' + '"' + 'dialog_overlay' + '"' + '></div><div id=' + '"' + 'dialog_content' + '"' + '><a id=' + '"' + 'dc_rightbtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><img src=' + '"' + 'http://www.ghs.net/public/images/cd/70/67/1ea434b9e909ded5c7ed3ea01c89deb49d042cd2.png' + '"' + ' /></a><div class=' + '"' + 'dc_success' + '"' + ' id=' + '"' + 'dcs_goods' + '"' + '><div id=' + '"' + 'dg_title' + '"' + '>恭喜您获得：</div><img src=' + '"' + 'http://mall.ghs.net/public/images/c2/a8/df/9f0ba28e392d975889f2a33cfedefd75aac00ac9.jpg' + '"' + ' /><div id=' + '"' + 'dg_name' + '"' + '>它正向你飞奔来，可在<span>&nbsp;我的-全部订单-待收货&nbsp;</span>中查看（颜色随机）</div></div><a id=' + '"' + 'dc_goodsclosebtn' + '"' + ' class=' + '"' + 'dc_closebtn' + '"' + ' href=' + '"' + 'javascript:void(0)' + '"' + '><span>确定</span></a></div>',
+        };
+        this.num = 0;
+        this.btnImg = ['http://mall.ghs.net/public/images/ae/79/ff/b2524098d46e62825d2703d81839345a8b1fe3bd.png', 'http://mall.ghs.net/public/images/ca/24/7a/5d98a84a9a403c33ad304757072171557ab86210.png'];//[0]为红色[1]为灰色
+
+    }
+    ;
+    Lottery.prototype = {
+        init: function () {
+            this.getNum();
+            this.bindEvent();
+        },
+        bindEvent: function () {
+            var _this = this;
+            $('#lottery_btn').one('click', function () {
+                //修改请求数据值，只有是再来一次时，再次请求数据
+                _this.requestStatus = false;
+                //添加动画特效
+                $('#tp_canvas').addClass('runanimation');
+                //ajax请求数据
+                $.ajax({
+                    type: "get",
+                    url: "/index.php?g=Wap&m=LotteryEleven&a=getajax&token={pigcms:$Dazpan.token}&wecha_id={pigcms:$wecha_id}&member_id={pigcms:$Dazpan.wecha_id}&id={pigcms:$Dazpan.lid}&rid={pigcms:$Dazpan.rid}",
+                    dataType: "json",
+                    //
+                    beforeSend: function () {
+                    },
+                    success: function (d) {
+                        if (d.msg == "error") {
+                            //拥有抽奖资格
+                            switch (d.status) {
+                                case -4004 :
+                                    _this.no(_this.dialogstr.noid);
+                                    break;   //没有uid
+                                case -4003 : /*_this.no(_this.dialogstr.nopay);*/
+                                    break;   //未在商城付款
+                                case -4 :
+                                    _this.no(_this.dialogstr.nochange);
+                                    break;   //没有抽奖机会
+                                    //case "-2" : ;break;   //已经中奖了
+                                    //case "-1" : ;break;   //活动结束 ,后台调用单独的html页面
+                            }
+                        } else if (d.msg == "success") {
+                            //没有抽奖资格
+                            switch (d.status) {
+                                case 0 :
+                                    _this.getnone();
+                                    break;   //没有抽中
+                                case 1 :
+                                    switch (d.data.other.prizetype) {
+                                        case 1 :
+                                            _this.getgoods(_this.angle.getIphone, _this.dialogstr.getIphone, _this.dialogstr.getIphoneSure);
+                                            break;   //1-iphone7
+                                        case 2 :
+                                            _this.getgoods(_this.angle.getTcl, _this.dialogstr.getTcl, _this.dialogstr.getTclSure);
+                                            break;   //2-TCL加湿器
+                                        case 3 :
+                                            _this.getgoods(_this.angle.getWine, _this.dialogstr.getWine, _this.dialogstr.getWineSure);
+                                            break;   //3-葡萄酒
+                                        case 4 :
+                                            _this.getlijin('http://pic.ghs.net/public/images/b4/ac/3c/6ebb8c6bdb2542b0f7d9c5490e3877409c51993c.jpg', _this.angle.getHundredAndFifty);
+                                            break;   //4-150礼金
+                                        case 6 :
+                                            _this.getrmb('http://pic.ghs.net/public/images/a6/0b/6a/19ef6f69aa6e30c7ca4eb1bbbefa8406b1746663.jpg', _this.angle.getFiveRmb);
+                                            break;   //5-5RMB
+                                        case 5 :
+                                            _this.getlijin('http://mall.ghs.net/public/images/7a/dd/e1/fba431ff2ac8dd5409514325b4cad2e45356c0fc.jpg', _this.angle.getHundred);
+                                            break;   //6-100礼金
+                                        case 7 :
+                                            _this.getrmb('http://pic.ghs.net/public/images/70/71/fd/adf1daac8ce17a8efded8bc5951b919cc972a7cc.jpg', _this.angle.getThreeRmb);
+                                            break;   //7-3RMB
+                                    };
+                                    break;   //中奖
+                            }
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    },
+                    //请求超时
+                    timeout: 10000
+                });
+            });
+        },
+        no: function (str) {
+            var _this = this;
+            var d = new Dialog(true, str);
+            d.init();
+            //添加点击抽奖事件
+            _this.addDialogEvent();
+        },
+        getnone: function () {
+            var _this = this;
+            //旋转6s
+            _this.turn(_this.angle.getNone);
+            //延迟7s显示，没有抽中提示框
+            //var d = new Dialog(true,_this.dialogstr.getNone,7000);
+            //d.init();
+            /*
+             //添加关闭弹窗按钮事件
+             $('#dc_rightbtn').on('click',function(){
+             alert(2);
+             $('#dialog').css('display','none');
+             });
+             */
+            //添加点击抽奖事件
+            //_this.addNCDialogEvent();
+            setTimeout(function () {
+                //显示
+                $('#dialog').html(_this.dialogstr.getNone);
+                $('#dialog').css('display', 'block');
+                //$('#lj_img').css('background-image','url('+'"'+num+'"'+')');
+                //绑定关闭按钮
+                $('#dc_rightbtn').on('click', function () {
+                    $('#dialog').css('display', 'none');
+                });
+                $('#dc_bottombtn').on('click', function () {
+                    $('#dialog').css('display', 'none');
+                });
+                //添加点击抽奖事件
+                //_this.addNCDialogEvent();
+                //判断是否还具有抽奖机会，重新绑定事件
+                _this.setNum();
+            }, 7000);
+        },
+        getlijin: function (num, angle, content) {
+            var _this = this;
+            //旋转角度
+            _this.turn(angle);
+            //弹窗显示，修改金额
+            //var d = new Dialog(true,_this.dialogstr.getlijin,7000);
+            //d.init();
+            setTimeout(function () {
+                //显示
+                $('#dialog').html(_this.dialogstr.getlijin);
+                $('#dialog').css('display', 'block');
+                $('#lj_img').css('background-image', 'url(' + '"' + num + '"' + ')');
+                //绑定关闭按钮
+                $('#dc_rightbtn').on('click', function () {
+                    $('#dialog').css('display', 'none');
+                });
+                $('#dc_bottombtn').on('click', function () {
+                    $('#dialog').css('display', 'none');
+                });
+                _this.setNum();
+            }, 7000);
+            //添加点击抽奖事件
+            //_this.addNCDialogEvent();
+        },
+        getrmb: function (num, angle, content) {
+            var _this = this;
+            //旋转角度
+            _this.turn(angle);
+            //弹窗显示，修改金额
+            //var d = new Dialog(true,_this.dialogstr.getlijin,7000);
+            //d.init();
+            setTimeout(function () {
+                //显示
+                $('#dialog').html(_this.dialogstr.getrmb);
+                $('#dialog').css('display', 'block');
+                $('#lj_img').css('background-image', 'url(' + '"' + num + '"' + ')');
+                //绑定关闭按钮
+                $('#dc_rightbtn').on('click', function () {
+                    $('#dialog').css('display', 'none');
+                });
+                $('#dc_bottombtn').on('click', function () {
+                    $('#dialog').css('display', 'none');
+                });
+                _this.setNum();
+            }, 7000);
+            //添加点击抽奖事件
+            //_this.addNCDialogEvent();
+        },
+        getgoods: function (angle, strOne, strTwo) {
+            //旋转角度
+            var _this = this;
+            _this.turn(angle);
+            //弹层,延时任务
+            setTimeout(function () {
+                //显示
+                $('#dialog').html(strOne);
+                $('#dialog').css('display', 'block');
+                //绑定关闭按钮
+                $('#dc_rightbtn').on('click', function () {
+                    $('#dialog').css('display', 'none');
+                    /*
+                     //放弃抽奖资格
+                     $('#lottery_btn').on('click',function(){
+                     $('#dialog').html(_this.dialogstr.nochange);
+                     $('#dialog').css('display','block');
+                     //绑定关闭按钮
+                     $('#dc_rightbtn').on('click',function(){
+                     $('#dialog').css('display','none');
+                     });
+                     $('#dc_bottombtn').on('click',function(){
+                     $('#dialog').css('display','none');
+                     });
+                     });
+                     */
+                });
+                //绑定领取按钮，跳转至页面2
+                $('#dc_bottombtn_goods').on('click', function () {
+                    $('#main').css('display', 'none');
+                    $('#address').css('display', 'block');
+                });
+                //页面2处理函数，3
+                var s = new Sendadd(strTwo);
+                s.init();
+                //添加点击抽奖事件
+                //_this.addNCDialogEvent();
+                _this.setNum();
+            }, 7000);
+        },
+        turn: function (angle) {
+            var t = this.oldAngle + 1800 - (this.oldAngle % 360) + angle;
+            this.oldAngle = t;
+            $('#tp_canvas').css('transform', 'rotate(' + this.oldAngle + 'deg)');
+            $('#tp_canvas').css('-webkit-transform', 'rotate(' + this.oldAngle + 'deg)');
+            $('#tp_canvas').css('-moz-transform', 'rotate(' + this.oldAngle + 'deg)');
+            $('#tp_canvas').css('-ms-transform', 'rotate(' + this.oldAngle + 'deg)');
+            $('#tp_canvas').css('-o-transform', 'rotate(' + this.oldAngle + 'deg)');
+            //console.log(this.oldAngle);
+        },
+        addDialogEvent: function () {
+            $('#lottery_btn').on('click', function () {
+                $('#dialog').css('display', 'block');
+            });
+        },
+        addNCDialogEvent: function () {
+            var _this = this;
+            $('#lottery_btn').on('click', function () {
+                $('#dialog').html(_this.dialogstr.nochange);
+                $('#dialog').css('display', 'block');
+                //绑定关闭按钮
+                $('#dc_rightbtn').on('click', function () {
+                    $('#dialog').css('display', 'none');
+                });
+                $('#dc_bottombtn').on('click', function () {
+                    $('#dialog').css('display', 'none');
+                });
+            });
+        },
+        getNum: function () {
+            this.num = $('#my_num').html();
+            //抽奖按钮置灰
+            if (this.num == 0) {
+                $('#lottery_btn_img').attr('src', this.btnImg[1]);
+                console.log(1)
+            }
+        },
+        setNum: function () {
+            var _this = this;
+            _this.num--;
+            //写入数据
+            $('#my_num').html(_this.num);
+            if (_this.num != 0) {
+                _this.bindEvent();
+            } else {
+                _this.addNCDialogEvent();
+                //抽奖按钮置灰
+                $('#lottery_btn_img').attr('src', this.btnImg[1]);
+            }
+        }
+    };
+    //    分享弹框
+    $(".banner .clickShare").on("click", function () {
+        $(".clickShareWindow").show();
+    });
+
+    $(".banner .clickShareWindow").on("click", function () {
+        $(".clickShareWindow").hide();
+    })
+
+
+
+</script>
+<!--
+<script>
+	/*! test 2016-09-06 */
+	function Sendadd(a){this.btn=$("#ad_submitbtn"),this.name=$("#ad_name"),this.phone=$("#ad_phone"),this.address=$("#ad_address"),this.nameError=$("#ad_setname"),this.phoneError=$("#ad_setphone"),this.addressError=$("#ad_setaddress"),this.dialogStr=a,this.status=!1}Sendadd.prototype={init:function(){var a=this;a.btn.on("click",function(){if(!a.name.val())return void a.nameError.css("visibility","visible");if(a.nameError.css("visibility","hidden"),!a.phone.val()||!/^1[3|4|5|7|8]\d{9}$/.test(a.phone.val()))return void a.phoneError.css("visibility","visible");if(a.phoneError.css("visibility","hidden"),!a.address.val())return void a.addressError.css("visibility","visible");a.addressError.css("visibility","hidden");var b={wxname:a.name.val(),tel:a.phone.val(),address:a.address.val(),wechaid:{pigcms:$wecha_id},lid:{pigcms:$Dazpan.lid},rid:{pigcms:$Dazpan.rid},action:"add"};$.ajax({type:"post",data:b,url:"/index.php?g=Wap&m=LotteryEleven&a=address",dataType:"json",beforeSend:function(){},success:function(b){"error"==b.msg||"success"==b.msg&&($("#address").css("display","none"),$("#main").css("display","block"),$("#dialog").html(a.dialogStr),$("#dc_rightbtn").on("click",function(){$("#dialog").css("display","none")}),$("#dc_goodsclosebtn").on("click",function(){$("#dialog").css("display","none")}))},error:function(){},timeout:1e4})})}};
+</script>
+-->
+</body>
+</html>
+<!---------百度统计代码--------->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?861c1f0d278a26908047e9f071b9e991";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<!--youmengtongji-->
+<div style="display:none;">
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1260124675'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1260124675 ' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>

@@ -1,0 +1,66 @@
+#address{
+	display: none;
+}
+
+#ad_title{
+	width: 10rem;
+	height: 1.16rem;
+	/*border-top: 1px solid #0f0f0f;*/
+	padding-left: 0.427rem;
+	font-size: 0.4rem;
+	line-height: 1.16rem; 
+}
+.ad_ul{
+	width: 7.96rem;
+	margin: 0 1.2rem 0 0.84rem;
+	font-size: 0;
+}
+.ad_ul li:nth-child(odd){
+	box-sizing: border-box;
+	display: block;
+	width: 7.587rem;
+	height: 1.147rem;
+	padding-top: 0.533rem;
+	margin-left: 0.3rem;
+	border-bottom: 1px solid #dcdcdc;
+	font-size: 0.4rem;
+	color: #666666;
+	line-height: 0.533rem;
+}
+.ad_ul li:nth-child(even){
+	box-sizing: border-box;
+	display: block;
+	height: 0.693rem;
+	font-size: 0.347rem;
+	color: #e90000;
+	line-height: 0.693rem;
+}
+#address input{
+	display: inline-block;
+	border: 0;
+	height: 0.533rem;
+	width: 5.3rem;
+	font-size: 0.4rem;
+	color: #666666;
+	line-height: 0.533rem;
+}
+#ad_setname,#ad_setphone,#ad_setaddress{
+	visibility: hidden;
+}
+#ad_submitbtn{
+	display: block;
+    width: 6.627rem;
+    height: 1.533rem;
+    margin: 1.0rem auto 0;
+    background-image: url('../images/dialog_btn.png');
+    background-size: 6.627rem 1.533rem;
+}
+#ad_submitbtn span{
+	display: block;
+	width: 6.627rem;
+	height: 1.533rem;
+	font-size: 0.533rem;
+	line-height: 1.533rem;
+	color: #ffffff;
+	text-align: center;
+}

@@ -1,0 +1,102 @@
+
+/*animals*/
+.clicked{
+    z-index: 0;
+    -webkit-animation: disappear .4s linear both;
+    animation: disappear .4s linear both;
+}
+.cue{
+    z-index: 4;
+    -webkit-animation: cue .2s linear both;
+    animation: cue .2s linear both;
+}
+@-webkit-keyframes disappear {
+    0%   { -webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    20%   { -webkit-transform: rotate(10deg);transform: rotate(10deg);}
+    40%   { -webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    60%   { -webkit-transform: rotate(10deg);transform: rotate(10deg);}
+    80%  { -webkit-transform: scale(.5,.5);transform: scale(.5,.5);}
+    100% { -webkit-transform: scale(0,0);transform: scale(0,0);}
+}
+@keyframes disappear {
+    0%   { -webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    20%   { -webkit-transform: rotate(20deg);transform: rotate(20deg);}
+    40%   { -webkit-transform: rotate(0deg);transform: rotate(0deg);}
+    60%   { -webkit-transform: rotate(20deg);transform: rotate(20deg);}
+    80%  { -webkit-transform: scale(.5,.5);transform: scale(.5,.5);}
+    100% { -webkit-transform: scale(0,0);transform: scale(0,0);}
+}
+
+.timeArea{ width: 3.76rem; height:5.227rem; text-align:center; margin:auto; position: absolute; top:0;left:0;right: 0;bottom:0;
+    -webkit-animation: hiddening .2s linear 2.8s both;  animation: hiddening .2s linear 2.8s both;}
+.timer3,.timer2,.timer1{margin:auto; position: absolute; top:0;left:0;right: 0;bottom:0;}
+.time img{ width: 100%;}
+.timer3{ width: 1.787rem; height: 2.36rem; }
+.timer2{ width: 1.653rem; height: 2.24rem;}
+.timer1{ width: 0.747rem; height: 2.333rem;}
+/*开始前倒计时动画1版*/
+/*.timer3{
+    -webkit-animation: timer 1s linear both;
+    animation: timer 1s linear both;
+}
+.timer2{
+    -webkit-animation: timer 1s linear 1s both;
+    animation: timer 1s linear 1s both;
+}
+.timer1{
+    -webkit-animation: timer 1s linear 2s both;
+    animation: timer 1s linear 2s both;
+}
+@-webkit-keyframes timer {
+!*    0% { -webkit-transform: scale(0,0);transform: scale(0,0);}
+    50%  { -webkit-transform: scale(.5,.5);transform: scale(.5,.5);}
+    97%  { -webkit-transform: scale(1,1);transform: scale(1,1);}
+    100% { -webkit-transform: scale(0,0);transform: scale(0,0);}*!
+}
+@keyframes timer {
+!*    0% { -webkit-transform: scale(0,0);transform: scale(0,0);}
+    50%  { -webkit-transform: scale(.5,.5);transform: scale(.5,.5);}
+    97%  { -webkit-transform: scale(1,1);transform: scale(1,1);}
+    100% { -webkit-transform: scale(0,0);transform: scale(0,0);}*!
+}*/
+@-webkit-keyframes hiddening {
+    0%  { -webkit-transform: scale(1,1);transform: scale(1,1);}
+    100% { -webkit-transform: scale(0,0);transform: scale(0,0);}
+}
+@keyframes hiddening {
+    0%  { -webkit-transform: scale(1,1);transform: scale(1,1);}
+    100% { -webkit-transform: scale(0,0);transform: scale(0,0);}
+}
+.cue{
+    width: 1.56rem ; height: .813rem;
+    -webkit-animation: cue 1s linear both;
+    animation: cue 1s linear both;
+}
+.cue img{
+    width:100%;max-width: 1.56rem ; height: auto;
+}
+/*中奖结果通知*/
+@-webkit-keyframes cue {
+    0%  { -webkit-transform: scale(1,1);transform: scale(1,1);}
+    99%  { -webkit-transform: scale(1,1);transform: scale(1,1);}
+    100% { -webkit-transform: scale(0,0);transform: scale(0,0);}
+}
+@keyframes cue {
+    0%  { -webkit-transform: scale(1,1);transform: scale(1,1);}
+    99%  { -webkit-transform: scale(1,1);transform: scale(1,1);}
+    100% { -webkit-transform: scale(0,0);transform: scale(0,0);}
+}
+/*中奖结果通知*/
+@-webkit-keyframes clickResultDown {
+    0%  { -webkit-transform: translate(0,-500);transform: translate(0,-500);}
+    100% { -webkit-transform: translate(0,0);transform: translate(0,0);}
+}
+@keyframes clickResultDown {
+    0%  { -webkit-transform: translate(0,-500);transform: translate(0,-500);}
+    100% { -webkit-transform: translate(0,0);transform: translate(0,0);}
+}
+
+
+
+
+

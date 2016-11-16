@@ -1,0 +1,64 @@
+
+#content, #r_title {
+    margin: 0 auto;
+    position: relative
+}
+
+#content {
+    width: 10rem;
+    height: 100vh;
+    background-color: #fff9fa;
+    font-family: PingFangSC-Regular, Helvetica, Arial, sans-serif
+}
+
+#title {
+    width: 10rem;
+    padding: .8rem 0 .4rem
+}
+
+#r_title {
+    width: 3.7067rem;
+    height: 1.267rem;
+    background-image: url(http://mall.ghs.net/public/images/ad/b3/40/e37f6c50eee88e7e18155ff61a795a58e663d394.png);
+    background-size: 3.7067rem 1.267rem
+}
+
+#r_title span {
+    display: block;
+    width: 7.2rem;
+    height: .667rem;
+    font-size: .48rem;
+    font-weight: 500;
+    color: #000;
+    line-height: .667rem;
+    text-align: center;
+    position: absolute;
+    top: .16rem;
+    left: 0
+}
+
+.r_content {
+    box-sizing: border-box;
+    width: 10rem;
+    padding: .15rem .8rem;
+    font-size: 14px;
+    line-height: 1.8em;
+    text-align: justify
+}
+
+.r_content .imp {
+    color: #000000;
+    font-weight: 900;
+}
+
+.b_content {
+    text-align: center;
+}
+
+[data-dpr="2"] .r_content {
+    font-size: 28px
+}
+
+[data-dpr="3"] .r_content {
+    font-size: 42px
+}
