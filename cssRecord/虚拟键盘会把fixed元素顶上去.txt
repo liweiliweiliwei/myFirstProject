@@ -1,0 +1,11 @@
+$('#phone').bind('focus',function(){  
+            $('.bottom_fix').css('position','static');  
+            //或者$('#viewport').height($(window).height()+'px');  
+        }).bind('blur',function(){  
+            $('.bottom_fix').css({'position':'fixed','bottom':'0'});  
+            //或者$('#viewport').height('auto');  
+        });  
+
+
+ps 1、当定位元素上部充满元素时，获取焦点时让他定位取消，在自己本来的位置，键盘弹出后就会把它挡住，失去焦点时让他重新获取定位。
+   2、当定位元素上面没有元素时，取消定位会让他回到上面，可以让他消失none，获取的时候再block，由于键盘消失需要时间可以设定个延迟时间让他显示如500ms。
