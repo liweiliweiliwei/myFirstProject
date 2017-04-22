@@ -1,0 +1,1 @@
+同时设置    background-repeat-x     background-repeat-y 为no-repeat，ios上还是会重复，设置为    background-repeat no-repeat 可以解决。
