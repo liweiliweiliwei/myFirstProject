@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航</title>
+</head>
+<style>
+    .g-scroll {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        right: 0;
+        width: 10rem;
+        margin-left: -5rem;
+        opacity: 0;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        -webkit-transform: translateY(-.6rem);
+        background-color: #f6f6f6;
+        z-index: 10;
+        touch-action: none;
+    }
+
+    .g-scroll.show {
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .u-scroll {
+        width: 14rem;
+        transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1);
+        transition-duration: 0ms;
+        transform: translate(0px, 0px) translateZ(0px);
+    }
+
+    .u-scroll li {
+        float: left;
+        width: 2rem;
+    }
+
+    .u-scroll a {
+        display: block;
+        position: relative;
+        width: 2rem;
+        line-height: 0;
+        color: #383838;
+        font-size: .4rem;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        padding: .3rem 0 .3rem .76rem;
+    }
+
+    .u-scroll a.show {
+        color: #fff;
+        background-color: #d75656;
+    }
+</style>
+<body>
+<div class="g-scroll">
+    <div class="u-scroll">
+        <ul>
+            <li><a href="javascript:;">1</a></li>
+            <li><a href="javascript:;">2</a></li>
+            <li><a href="javascript:;">3</a></li>
+            <li><a href="javascript:;">4</a></li>
+            <li><a href="javascript:;">5</a></li>
+            <li><a href="javascript:;">6</a></li>
+            <li><a href="javascript:;">7</a></li>
+        </ul>
+    </div>
+</div>
+<!--<div style="height: 1rem;"></div>-->
+<div style="width:10rem;height:10rem;background-color: #fff;" id="ooo"></div>
+<div style="width:10rem;height:10rem;background-color: #00a7f9;" id="aaa"></div>
+<div style="width:10rem;height:10rem;background-color: #d75656;" id="bbb"></div>
+<div style="width:10rem;height:10rem;background-color: #000000;" id="ccc"></div>
+<div style="width:10rem;height:10rem;background-color: #00a7f9;" id="ddd"></div>
+<div style="width:10rem;height:10rem;background-color: #000000;" id="eee"></div>
+<div style="width:10rem;height:10rem;background-color: #00a7f9;" id="fff"></div>
+<div style="width:10rem;height:20rem;background-color: #f9fe59;" id="ggg"></div>
+</body>
+</html>
+<script src="zepto.min.js"></script>
+<script src="flexible_css.js"></script>
+<script src="flexible.js"></script>
+<script>
+    $(function ($) {
+        var startX, moveX;
+        var maxLeftMoveDis = $(window).width() - $(".u-scroll").width();
+        $(".g-scroll").on("touchstart", function () {
+            var touch = event.touches[0];
+            startX = touch.pageX;
+        }).on("touchmove", function () {
+            var touch = event.touches[0];
+            moveX = touch.pageX - startX;
+            if (moveX > 0) {
+                moveX = 0
+            } else if (moveX < maxLeftMoveDis) {
+                moveX = maxLeftMoveDis;
+            }
+            $(".u-scroll").css({
+                "transform": "translate(" + moveX + "px, 0px) translateZ(0px)"
+            })
+        });
+
+
+        $(window).on("scroll", function () {
+            var rootForntSize = parseFloat($("html").css("font-size"));
+            if ($("#aaa").offset().top <= $(window).scrollTop() + 1 * rootForntSize + 1) {
+                $(".g-scroll").addClass("show");
+            } else {
+                $(".g-scroll").removeClass("show");
+            }
+        });
+        $(window).on("scroll", function () {
+            var rootForntSize = parseFloat($("html").css("font-size"));
+            if (document.body.scrollHeight - $(window).scrollTop() <= document.documentElement.clientHeight) {
+                $(".u-scroll a").removeClass("show");
+                $(".u-scroll li").eq(6).children().addClass("show");
+            } else if ($("#ggg").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                $(".u-scroll a").removeClass("show");
+                $(".u-scroll li").eq(6).children().addClass("show");
+            } else if ($("#fff").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                $(".u-scroll a").removeClass("show");
+                $(".u-scroll li").eq(5).children().addClass("show");
+                deteFun(5);
+            } else if ($("#eee").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                $(".u-scroll a").removeClass("show");
+                $(".u-scroll li").eq(4).children().addClass("show");
+                deteFun(4);
+            } else if ($("#ddd").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                $(".u-scroll a").removeClass("show");
+                $(".u-scroll li").eq(3).children().addClass("show");
+            } else if ($("#ccc").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                $(".u-scroll a").removeClass("show");
+                $(".u-scroll li").eq(2).children().addClass("show");
+                deteFun(2);
+            } else if ($("#bbb").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                $(".u-scroll a").removeClass("show");
+                $(".u-scroll li").eq(1).children().addClass("show");
+                deteFun(1);
+            } else if ($("#aaa").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                $(".u-scroll a").removeClass("show");
+                $(".u-scroll li").eq(0).children().addClass("show");
+            }
+        });
+//        检测当前项位置并移动
+        var deteFun = function (posNum) {
+            if (posNum == 1) {
+                var moveNumRight = 0;
+                var moveNumLeft = 0;
+            } else if (posNum == 2) {
+                var moveNumRight = 0;
+                var moveNumLeft = 1;
+            } else if (posNum == 4) {
+                var moveNumRight = 1;
+                var moveNumLeft = 0;
+            } else if (posNum == 5) {
+                var moveNumRight = 2;
+                var moveNumLeft = 0;
+            }
+            var judgePosRight = $(window).width() - $(".u-scroll li").eq(posNum).offset().left < $(".u-scroll li").eq(posNum).width() * 2;
+            var judgePosLeft = $(".u-scroll li").eq(posNum).offset().left < $(".u-scroll li").eq(posNum).width();
+            if (judgePosRight) {
+                $(".u-scroll").css({
+                    "transition-duration": "1200ms",
+                    "transform": "translate(-" + ($(".u-scroll li").eq(posNum).width() * moveNumRight) + "px, 0px) translateZ(0px)"
+                })
+            } else if (judgePosLeft) {
+                $(".u-scroll").css({
+                    "transition-duration": "1200ms",
+                    "transform": "translate(-" + ($(".u-scroll li").eq(posNum).width() * moveNumLeft) + "px, 0px) translateZ(0px)"
+                })
+            }
+        };
+        $(".u-scroll li").each(function (index, item) {
+            var _this = this;
+            (function (index) {
+                var navArry = ['aaa', 'bbb', 'ccc', 'ddd', "eee", "fff", "ggg"];
+                $(_this).on("click", function () {
+                    isScroll = false;
+                    $(".u-scroll a").removeClass("show");
+                    $(_this).children().addClass("show");
+                    var rootForntSize = parseFloat($("html").css("font-size"));
+                    var scrollNum = $("#" + navArry[index]).offset().top - 1 * rootForntSize;
+                    deteFun(index);
+                    $(window).scrollTop(scrollNum);
+                })
+            })(index)
+        })
+    })
+</script>
