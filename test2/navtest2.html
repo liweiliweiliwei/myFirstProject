@@ -87,6 +87,7 @@
 <script src="flexible.js"></script>
 <script>
     $(function ($) {
+        var isScroll = true;
         var startX, moveX;
         var maxLeftMoveDis = $(window).width() - $(".u-scroll").width();
         $(".g-scroll").on("touchstart", function () {
@@ -116,34 +117,36 @@
         });
         $(window).on("scroll", function () {
             var rootForntSize = parseFloat($("html").css("font-size"));
-            if (document.body.scrollHeight - $(window).scrollTop() <= document.documentElement.clientHeight) {
-                $(".u-scroll a").removeClass("show");
-                $(".u-scroll li").eq(6).children().addClass("show");
-            } else if ($("#ggg").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
-                $(".u-scroll a").removeClass("show");
-                $(".u-scroll li").eq(6).children().addClass("show");
-            } else if ($("#fff").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
-                $(".u-scroll a").removeClass("show");
-                $(".u-scroll li").eq(5).children().addClass("show");
-                deteFun(5);
-            } else if ($("#eee").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
-                $(".u-scroll a").removeClass("show");
-                $(".u-scroll li").eq(4).children().addClass("show");
-                deteFun(4);
-            } else if ($("#ddd").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
-                $(".u-scroll a").removeClass("show");
-                $(".u-scroll li").eq(3).children().addClass("show");
-            } else if ($("#ccc").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
-                $(".u-scroll a").removeClass("show");
-                $(".u-scroll li").eq(2).children().addClass("show");
-                deteFun(2);
-            } else if ($("#bbb").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
-                $(".u-scroll a").removeClass("show");
-                $(".u-scroll li").eq(1).children().addClass("show");
-                deteFun(1);
-            } else if ($("#aaa").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
-                $(".u-scroll a").removeClass("show");
-                $(".u-scroll li").eq(0).children().addClass("show");
+            if (isScroll) {
+                if (document.body.scrollHeight - $(window).scrollTop() <= document.documentElement.clientHeight) {
+                    $(".u-scroll a").removeClass("show");
+                    $(".u-scroll li").eq(6).children().addClass("show");
+                } else if ($("#ggg").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                    $(".u-scroll a").removeClass("show");
+                    $(".u-scroll li").eq(6).children().addClass("show");
+                } else if ($("#fff").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                    $(".u-scroll a").removeClass("show");
+                    $(".u-scroll li").eq(5).children().addClass("show");
+                    deteFun(5);
+                } else if ($("#eee").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                    $(".u-scroll a").removeClass("show");
+                    $(".u-scroll li").eq(4).children().addClass("show");
+                    deteFun(4);
+                } else if ($("#ddd").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                    $(".u-scroll a").removeClass("show");
+                    $(".u-scroll li").eq(3).children().addClass("show");
+                } else if ($("#ccc").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                    $(".u-scroll a").removeClass("show");
+                    $(".u-scroll li").eq(2).children().addClass("show");
+                    deteFun(2);
+                } else if ($("#bbb").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                    $(".u-scroll a").removeClass("show");
+                    $(".u-scroll li").eq(1).children().addClass("show");
+                    deteFun(1);
+                } else if ($("#aaa").offset().top - $(window).scrollTop() <= 1 * rootForntSize) {
+                    $(".u-scroll a").removeClass("show");
+                    $(".u-scroll li").eq(0).children().addClass("show");
+                }
             }
         });
 //        检测当前项位置并移动
@@ -187,6 +190,9 @@
                     var scrollNum = $("#" + navArry[index]).offset().top - 1 * rootForntSize;
                     deteFun(index);
                     $(window).scrollTop(scrollNum);
+                    setTimeout(function () {
+                        isScroll = true;
+                    }, 100);
                 })
             })(index)
         })
