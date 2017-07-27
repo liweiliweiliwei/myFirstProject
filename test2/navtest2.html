@@ -95,7 +95,7 @@
             startX = touch.pageX;
         }).on("touchmove", function () {
             var touch = event.touches[0];
-            moveX = touch.pageX - startX;
+            moveX = (touch.pageX - startX)*2;
             if (moveX > 0) {
                 moveX = 0
             } else if (moveX < maxLeftMoveDis) {
