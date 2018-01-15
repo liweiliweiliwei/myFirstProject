@@ -1,0 +1,114 @@
+@charset 'UTF-8';
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+body {
+	width: 100%;
+	height: 100%;
+	color: #333;
+	font-family: 'PingFang-SC-Regular', '微软雅黑', Arial, Helvetica, 'microsoft yahei', sans-serif;
+	font-size: .32rem;
+	margin: 0;
+	padding: 0;
+	background: #f1f3f6 !important;
+	overflow: hidden;
+}
+img {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+p {
+	padding: 0;
+	margin: 0;
+}
+th,
+td {
+	border: none;
+}
+ul,
+li {
+	list-style: none;
+}
+a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #333;
+	text-decoration: none;
+    /*消除ie10灰色背景*/
+    background-color: transparent;
+}
+a:focus, a:hover {
+	text-decoration: none;
+}
+input::-webkit-input-placeholder {
+	color:#333;
+}
+input[type="text"] {
+    outline: none;
+    background: none;
+    color: #333;
+    -webkit-appearance: none;
+    appearance:none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+input:disabled,input[disabled]{
+    -webkit-text-fill-color: #333;
+    -webkit-opacity: 1;
+    opacity: 1;
+}
+input[type="checkbox"] {
+	background-color: transparent;
+	border: 1px solid #ccc;
+}
+/*滚动条样式*/
+.scroll {
+	overflow: auto;
+}
+
+.scroll::-webkit-scrollbar {
+	width: 0.01rem;
+	height: .01rem;
+}
+
+#scroll.scroll::-webkit-scrollbar {
+	width: 0.01rem;
+	height: .01rem;
+}
+
+body.scroll::-webkit-scrollbar {
+	width: .01rem;
+	height: .01rem;
+}
+
+.scroll::-webkit-scrollbar-button {
+	width: 0;
+	height: 0;
+	background-color: transparent;
+}
+
+.scroll::-webkit-scrollbar-track {
+	background: transparent;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+	/*background:#ccc;*/
+	border-radius: 1rem;
+	background-color: #c1c1c1;
+}
+
+.scroll::-webkit-scrollbar-corner {
+	background: transparent;
+}
