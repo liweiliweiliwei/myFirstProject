@@ -12,4 +12,5 @@
 除非你要克隆一个a，来添加，这样才不会改变原来的那个位置。
 DOM Node对象的appendChild()方法有一个特性：如果将已存在文档中的一个节点再次插入，那么该节点会从它原来在文档中的位置删除，然后在新的位置重新被插入。
 7、$(document).ajaxSuccess(function(){});ajax成功函数全局写法。
-
+8、ios不兼容事件委托，需要加样式cursor:pointer兼容
+9、 history.go(-1)等方法返回上一页并且刷新不兼容ios，要用location.herf=document.referrer兼容
